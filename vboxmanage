@@ -13,7 +13,7 @@ function create_vm {
     local VM_DIR="$HOME/VirtualBox VMs/$VM_NAME"
 
     VBoxManage createvm --name "$VM_NAME" --register
-    VBoxManage modifyvm "$VM_NAME" --memory 2048 --cpus 1 --boot1 disk --boot2 net --boot3 none --boot4 none
+    VBoxManage modifyvm "$VM_NAME" --memory 1024 --cpus 1 --boot1 disk --boot2 net --boot3 none --boot4 none
     VBoxManage modifyvm "$VM_NAME" --audio none --ostype Linux_64 --vram 16 --acpi on
     VBoxManage modifyvm "$VM_NAME" --nic1 hostonly --nictype1 virtio --hostonlyadapter1 "$ADAPTOR" --cableconnected1 on
     # VBoxManage modifyvm "$VM_NAME" --nic2 intnet --nictype2 82545EM --intnet2 "metal" --cableconnected2 on
